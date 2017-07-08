@@ -10,7 +10,7 @@ var APP_ID = "amzn1.ask.skill.a2f50ebf-09b1-46cf-a280-eb9072fba70b";
 var SKILL_NAME = "Robot Talk";
 var ROBOT_RESPONSE_MESSAGE = "Robot has something to say: ";
 var ROBOT_INTRODUCTION = "My name is Rodney";
-var HELP_MESSAGE = "You can say talk to me, or, you can say exit... What can I help you with?";
+var HELP_MESSAGE = "Ask me to talk to you! I'll say something interesting in return.";
 var HELP_REPROMPT = "What's up?";
 var STOP_MESSAGE = "Goodbye!";
 
@@ -58,7 +58,7 @@ var handlers = {
         var noiseIndex = Math.floor(Math.random() * noiseArr.length);
         var randomSpeech = noiseArr[noiseIndex];
         var speechOutput = ROBOT_RESPONSE_MESSAGE + randomSpeech;
-        this.emit(':tellWithCard', speechOutput, SKILL_NAME, randomSpeech)
+        this.emit(':tellWithCard', speechOutput, SKILL_NAME)
     },
     'TellRobotNameIntent': function () {
         var speechOutput = ROBOT_INTRODUCTION;
